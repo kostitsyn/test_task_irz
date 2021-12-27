@@ -1,0 +1,27 @@
+.table {
+    display: grid;
+    grid-template-rows: 100px 100px 100px;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+    justify-content: center;
+
+
+    grid-gap: 0.5px;
+    border: 3px solid black;
+}
+
+.column {
+    /*border: 1px solid black;*/
+    border-right: 3px solid black;
+    padding-left: 10px;
+}
+
+.last {
+    border-right: none;
+}
