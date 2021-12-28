@@ -1,0 +1,41 @@
+.table {
+    display: grid;
+    grid-template-rows: auto;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+}
+
+.table button {
+    margin-top: 20px;
+    width: 100px;
+    background-color: crimson;
+    margin-bottom: 100px;
+}
+
+.header {
+    border: 2px solid black;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+    justify-content: center;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+}
+
+.column {
+    border-right: 2px solid black;
+    padding-left: 10px;
+}
+
+.column input {
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+.last {
+    border-right: none;
+}

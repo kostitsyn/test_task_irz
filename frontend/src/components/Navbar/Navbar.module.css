@@ -1,0 +1,12 @@
+.navbar {
+    display: grid;
+    grid-template-rows: 30px 30px;
+    grid-template-columns: 70px;
+    padding: 30px;
+}
+
+.navbar a {
+    text-decoration: none;
+    background-color: #985f0d;
+    color: #f5dd5d;
+}
