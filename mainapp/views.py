@@ -37,7 +37,8 @@ class QuestionViewSet(mixins.ListModelMixin,
             is_answered=is_answered,
             link=data['link']
         )
-        return Response(status=status.HTTP_201_CREATED)
+        serializer = self.serializer_class(new_question)
+        return Response(serializer.data)
 
     def destroy(self, request, *args, **kwargs):
         Question.objects.all().delete()

@@ -11,7 +11,6 @@ class App extends React.Component {
         super(props);
         this.url = 'http://127.0.0.1:8000'
         this.state = {
-            users: [],
             questions: [],
         }
     }
@@ -26,17 +25,6 @@ class App extends React.Component {
                     console.log(error);
                     this.setState({
                         questions: []
-                    })
-            })
-            axios.get(`${this.url}/api/users/`)
-                .then(response => {
-                    this.setState({
-                        users: response.data,
-                    })
-                }).catch(error => {
-                    console.log(error);
-                    this.setState({
-                        users: []
                     })
             })
     }
@@ -54,15 +42,21 @@ class App extends React.Component {
         }
         axios.post(`${this.url}/api/questions/`, data, {headers: headers})
             .then(response => {
-                this.loadData();
+                let newObj = response.data;
+                let questions = this.state.questions;
+                questions.push(newObj);
+                this.setState({
+                    questions: questions
+                })
             })
     }
 
     deleteAllNotes() {
         axios.delete(`${this.url}/api/questions/1/`)
             .then(response => {
-                console.log('Delete all notes');
-                this.loadData();
+                this.setState({
+                    questions: []
+                })
             })
 
     }
